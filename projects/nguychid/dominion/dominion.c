@@ -1315,7 +1315,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 	return 0;
 }
 
-void adventurer_method(struct gameState* state, int temphand[], int currentPlayer) {
+void adventurer_method(struct gameState* state, int *temphand, int currentPlayer) {
 	int drawntreasure = 0;
 	int cardDrawn;
 	int z = 0;
@@ -1332,7 +1332,7 @@ void adventurer_method(struct gameState* state, int temphand[], int currentPlaye
 		else {
 			temphand[z] = cardDrawn;
 			state->handCount[currentPlayer]--;
-			z++
+			z++;
 		}
 	}
 	while (z - 1 >= 0) {
