@@ -654,7 +654,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	int j;
 	int k;
 	int x;
-	int index;
 	int currentPlayer = whoseTurn(state);
 	int nextPlayer = currentPlayer + 1;
 
@@ -1169,10 +1168,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case treasure_map:
-		int status = treasure_map_method(state, currentPlayer);
-		return status;
-
-		
+		return treasure_map_method(state, currentPlayer, handPos);
 	}
 
 	return -1;
@@ -1291,8 +1287,8 @@ void smithy_method(struct gameState *state, int currentPlayer, int handPos) {
 }
 
 int treasure_map_method(struct gameState *state, int currentPlayer,int handPos) {
-	index = -1;
-	for (i = 0; i < state->handCount[currentPlayer]; i++)
+	int index = -1;
+	for (int i = 0; i < state->handCount[currentPlayer]; i++)
 	{
 		if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
 		{
