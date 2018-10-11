@@ -132,4 +132,8 @@ void adventurer_method(struct gameState *state, int temphand[], int currentPlaye
 /*
 	Pulling the case/switch functionality for Adventurer into its own function
 */
+void smithy_method(struct gameState *state, int currentPlayer, int handPos);
+/*
+	Refractoring smithy case into a function 
+*/
 #endif
