@@ -1082,37 +1082,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case cutpurse:
-
-		updateCoins(currentPlayer, state, 2);
-		for (i = 0; i < state->numPlayers; i++)
-		{
-			if (i != currentPlayer)
-			{
-				for (j = 0; j < state->handCount[i]; j++)
-				{
-					if (state->hand[i][j] == copper)
-					{
-						discardCard(j, i, state, 0);
-						break;
-					}
-					if (j == state->handCount[i])
-					{
-						for (k = 0; k < state->handCount[i]; k++)
-						{
-							if (DEBUG)
-								printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
-						}
-						break;
-					}
-				}
-
-			}
-
-		}
-
-		//discard played card from hand
-		discardCard(handPos, currentPlayer, state, 0);
-
+		cutpurse_method(state, currentPlayer, handPos);
 		return 0;
 
 
@@ -1341,6 +1311,38 @@ void adventurer_method(struct gameState* state, int temphand[], int currentPlaye
 		z = z - 1;
 	}
 	return;
+
+}
+void cutpurse_method(struct gameState* state, int currentPlayer, int handPos) {
+	updateCoins(currentPlayer, state, 2);
+	for (int i = 0; i < state->numPlayers; i++)
+	{
+		if (i != currentPlayer)
+		{
+			for (int j = 0; j < state->handCount[i]; j++)
+			{
+				if (state->hand[i][j] == copper)
+				{
+					discardCard(j, i, state, 0);
+					break;
+				}
+				if (j == state->handCount[i])
+				{
+					for (int k = 0; k < state->handCount[i]; k++)
+					{
+						if (DEBUG)
+							printf("Player %d reveals card number %d\n", i, state->hand[i][k]);
+					}
+					break;
+				}
+			}
+
+		}
+
+	}
+
+	//discard played card from hand
+	discardCard(handPos, currentPlayer, state, 0);
 
 }
 //end of dominion.c
