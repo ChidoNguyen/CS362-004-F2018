@@ -647,7 +647,7 @@ int getCost(int cardNumber)
 	return -1;
 }
 
-void adventurer_method(struct gameState* state, int &temphand, int currentPlayer) {
+void adventurer_method(struct gameState* state, int temphand[], int currentPlayer) {
 	int drawntreasure = 0;
 	int cardDrawn;
 	int z = 0;
@@ -696,7 +696,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	switch (card)
 	{
 	case adventurer:
-		adventurer_method(state, &temphand,currentPlayer);
+		adventurer_method(state, temphand,currentPlayer);
 		return 0;
 
 	case council_room:
