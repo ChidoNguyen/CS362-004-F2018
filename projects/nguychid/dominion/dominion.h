@@ -136,4 +136,5 @@ void smithy_method(struct gameState *state, int currentPlayer, int handPos);
 /*
 	Refractoring smithy case into a function 
 */
+int treasure_map_method(struct gameState *state, int currentPlayer, int handPos);
 #endif
