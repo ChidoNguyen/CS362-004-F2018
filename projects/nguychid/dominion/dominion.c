@@ -1303,7 +1303,7 @@ int treasure_map_method(struct gameState *state, int currentPlayer,int handPos) 
 		discardCard(index, currentPlayer, state, 1);
 
 		//gain 4 Gold cards
-		for (i = 0; i < 4; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			gainCard(gold, state, 1, currentPlayer);
 		}
