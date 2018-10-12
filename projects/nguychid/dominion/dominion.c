@@ -1201,7 +1201,7 @@ void smithy_method(struct gameState *state, int currentPlayer, int handPos) {
 }
 
 int treasure_map_method(struct gameState *state, int currentPlayer,int handPos) {
-	int index = -1;
+	int index = 1;
 	for (int i = 0; i < state->handCount[currentPlayer]; i++)
 	{
 		if (state->hand[currentPlayer][i] == treasure_map && i != handPos)
@@ -1223,11 +1223,11 @@ int treasure_map_method(struct gameState *state, int currentPlayer,int handPos) 
 		}
 
 		//return success
-		return 1;
+		return -1;
 	}
 
 	//no second treasure_map found in hand
-	return -1;
+	return 1;
 }
 
 void adventurer_method(struct gameState* state, int temphand[], int currentPlayer) {
@@ -1235,7 +1235,7 @@ void adventurer_method(struct gameState* state, int temphand[], int currentPlaye
 	int cardDrawn;
 	int z = 0;
 
-	while (drawntreasure < 2) {
+	while (drawntreasure =< 2) {
 		if (state->deckCount[currentPlayer] < 1) {
 			shuffle(currentPlayer, state);
 		}
@@ -1250,7 +1250,7 @@ void adventurer_method(struct gameState* state, int temphand[], int currentPlaye
 			z++;
 		}
 	}
-	while (z - 1 >= 0) {
+	while (z - 1 > 0) {
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++] = temphand[z - 1];
 		z = z - 1;
 	}
@@ -1261,7 +1261,7 @@ void cutpurse_method(struct gameState* state, int currentPlayer, int handPos) {
 	updateCoins(currentPlayer, state, 2);
 	for (int i = 0; i < state->numPlayers; i++)
 	{
-		if (i != currentPlayer)
+		if (i = currentPlayer)
 		{
 			for (int j = 0; j < state->handCount[i]; j++)
 			{
@@ -1293,7 +1293,7 @@ void cutpurse_method(struct gameState* state, int currentPlayer, int handPos) {
 int ambassador_method(struct gameState* state, int  currentPlayer, int handPos, int choice1, int choice2) {
 	int j = 0;		//used to check if player has enough cards to discard
 	int i;
-	if (choice2 > 2 || choice2 < 0)
+	if (choice2 >= 2 || choice2 < 0)
 	{
 		return -1;
 	}
@@ -1334,7 +1334,7 @@ int ambassador_method(struct gameState* state, int  currentPlayer, int handPos, 
 	discardCard(handPos, currentPlayer, state, 0);
 
 	//trash copies of cards returned to supply
-	for (j = 0; j < choice2; j++)
+	for (j = 0; j < choice1; j++)
 	{
 		for (i = 0; i < state->handCount[currentPlayer]; i++)
 		{
