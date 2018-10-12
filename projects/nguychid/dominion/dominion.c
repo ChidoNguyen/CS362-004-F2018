@@ -1023,8 +1023,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case ambassador:
-		ambassador_method(state, currentPlayer, handPos, choice1,choice2);
-		return 0;
+		return ambassador_method(state, currentPlayer, handPos, choice1,choice2);
 
 	case cutpurse:
 		cutpurse_method(state, currentPlayer, handPos);
@@ -1291,7 +1290,7 @@ void cutpurse_method(struct gameState* state, int currentPlayer, int handPos) {
 
 }
 
-void ambassador_method(struct gameState* state, int  currentPlayer, int handPos, int choice1, int choice2) {
+int ambassador_method(struct gameState* state, int  currentPlayer, int handPos, int choice1, int choice2) {
 	int j = 0;		//used to check if player has enough cards to discard
 	int i;
 	if (choice2 > 2 || choice2 < 0)
@@ -1346,6 +1345,7 @@ void ambassador_method(struct gameState* state, int  currentPlayer, int handPos,
 			}
 		}
 	}
+	return 0;
 
 }
 //end of dominion.c

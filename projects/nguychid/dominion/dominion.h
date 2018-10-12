@@ -140,5 +140,5 @@ int treasure_map_method(struct gameState *state, int currentPlayer, int handPos)
 
 void cutpurse_method(struct gameState *state, int currentPlayer, int handPos);
 
-void ambassador_method(struct gameState* state, int currentPlayer, int handPos, int choice1, int choice2);
+int ambassador_method(struct gameState* state, int currentPlayer, int handPos, int choice1, int choice2);
 #endif
