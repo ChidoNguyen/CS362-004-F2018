@@ -1235,7 +1235,7 @@ void adventurer_method(struct gameState* state, int temphand[], int currentPlaye
 	int cardDrawn;
 	int z = 0;
 
-	while (drawntreasure =< 2) {
+	while (drawntreasure <= 2) {
 		if (state->deckCount[currentPlayer] < 1) {
 			shuffle(currentPlayer, state);
 		}
