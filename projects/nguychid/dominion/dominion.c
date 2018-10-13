@@ -1194,7 +1194,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 }
 
 void smithy_method(struct gameState *state, int currentPlayer, int handPos) {
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i <= 3; i++) {
 		drawCard(currentPlayer, state);
 	}
 	discardCard(handPos, currentPlayer, state, 0);
@@ -1261,7 +1261,7 @@ void cutpurse_method(struct gameState* state, int currentPlayer, int handPos) {
 	updateCoins(currentPlayer, state, 2);
 	for (int i = 0; i < state->numPlayers; i++)
 	{
-		if (i = currentPlayer)
+		if (i != currentPlayer)
 		{
 			for (int j = 0; j < state->handCount[i]; j++)
 			{
