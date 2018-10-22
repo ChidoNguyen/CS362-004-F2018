@@ -33,7 +33,7 @@ int isGameOver(struct gameState *state) {
 
 void testGameOver() {
 
-	struct gameState *temp = malloc(sizeof(gameState));
+	struct gameState *temp = malloc(sizeof(struct gameState));
 	int case1 = -1;
 	int case2 = 0;
 	int case3 = 1;
@@ -61,7 +61,7 @@ void testGameOver() {
 		failed++;
 	}
 
-	temp->supplyCount[Province] = case1;
+	temp->supplyCount[province] = case1;
 	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): 1 province count test: \tPASSED\n");
