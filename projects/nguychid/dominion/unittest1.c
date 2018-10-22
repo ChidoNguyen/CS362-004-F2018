@@ -28,32 +28,32 @@ void testCompare() {
 
 	result = compare(&a, &b);
 	if (result == -1) {
-		printf("COMPARE(): INT_MIN < INT_MAX : PASSED");
+		printf("COMPARE(): INT_MIN < INT_MAX : PASSED\n");
 		passed++;
 	}
 	else {
-		printf("COMPARE(): INT_MIN < INT_MAX: FAILED");
+		printf("COMPARE(): INT_MIN < INT_MAX: FAILED\n");
 		failed++;
 	}
 
 	result = compare(&b, &a);
 
 	if (result == 1) {
-		printf("COMPARE(): INT_MIN > INT_MAX : PASSED");
+		printf("COMPARE(): INT_MIN > INT_MAX : PASSED\n");
 		passed++;
 	}
 	else {
-		printf("COMPARE(): INT_MIN > INT_MAX: FAILED");
+		printf("COMPARE(): INT_MIN > INT_MAX: FAILED\n");
 		failed++;
 	}
 	
 	result = compare(&a, &a);
 	if (result == 0) {
-		printf("COMPARE(): INT_MIN == INT_MAX : PASSED");
+		printf("COMPARE(): INT_MIN == INT_MAX : PASSED\n");
 		passed++;
 	}
 	else {
-		printf("COMPARE(): INT_MIN == INT_MAX: FAILED");
+		printf("COMPARE(): INT_MIN == INT_MAX: FAILED\n");
 		failed++;
 	}
 	
