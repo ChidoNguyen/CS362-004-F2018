@@ -71,7 +71,7 @@ void testScoreFor() {
 					printf("scoreFor() -> handCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 				break;
 		}
-		delete state;
+		delete(state);
 	}
 
 	// test discard //
@@ -136,7 +136,7 @@ void testScoreFor() {
 				printf("scoreFor() -> discardCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 			break;
 		}
-		delete state;
+		delete( state);
 	}
 
 	//test deck//
@@ -202,12 +202,12 @@ void testScoreFor() {
 				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 			break;
 		}
-		delete state;
+		delete(state);
 	}
 	
 }
 
-void populateHand(CARD pick, struct gameState *state, int player) {
+void populateHand(enum CARD pick, struct gameState *state, int player) {
 	state->handCount[player] = 10; // set to 10 card count
 	int i;
 	for (i = 0; i < state->handCount[player]; i++) {
@@ -215,7 +215,7 @@ void populateHand(CARD pick, struct gameState *state, int player) {
 	}
 }
 
-void populateDiscard(CARD pick, struct gameState *state, int player) {
+void populateDiscard(enum CARD pick, struct gameState *state, int player) {
 	state->discardCount[player] = 10; // set to 10 card count
 	int i;
 	for (i = 0; i < state->discardCount[player]; i++) {
@@ -223,7 +223,7 @@ void populateDiscard(CARD pick, struct gameState *state, int player) {
 	}
 }
 
-void populateDeck(CARD pick, struct gameState *state, int player) {
+void populateDeck(enum CARD pick, struct gameState *state, int player) {
 	state->deckCount[player] = 10; // set to 10 card count
 	int i;
 	for (i = 0; i < state->deckCount[player]; i++) {
