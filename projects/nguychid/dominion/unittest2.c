@@ -43,7 +43,7 @@ void testGameOver() {
 	for (x = 0; x < 25; x++) {
 		temp->supplyCount[x] = 1;
 	}
-
+	printf("isGameOver(): Pre-populated with no empty piles\n");
 	temp->supplyCount[province] = case1;
 	results = isGameOver(temp);
 	if (results != 1) {
