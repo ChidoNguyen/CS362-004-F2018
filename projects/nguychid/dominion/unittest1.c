@@ -1,7 +1,7 @@
-#include "dominion.h"
-#include <stdio>
+
+#include <stdio.h>
 #include <math.h>
-#include <stdlib>
+#include <stdlib.h>
 #include <limits.h>
 
 //Unit Testing for the compare() function //
@@ -9,6 +9,14 @@
 //Returns: 1 if A is greater than (B less than)
 //        -1 if A is less than (B greater than)
 //         0 if equal
+
+int compare(const void* a, const void* b) {
+	if (*(int*)a > *(int*)b)
+		return 1;
+	if (*(int*)a < *(int*)b)
+		return -1;
+	return 0;
+}
 
 void testCompare() {
 	int a, b, c, d, e, result;
