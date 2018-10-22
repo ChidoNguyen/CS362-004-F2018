@@ -56,7 +56,7 @@ void testGameOver() {
 	}
 	temp->supplyCount[province] = case2;
 	results = isGameOver(temp);
-	if (results != 1) {
+	if (results) {
 		printf("isGameOver(): 0 province count test: \tPASSED\n");
 		passed++;
 	}
