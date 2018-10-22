@@ -40,7 +40,7 @@ void testGameOver() {
 	int x = 0;
 	int results, passed, failed;
 
-	temp->supplyCount[Province] = case1;
+	temp->supplyCount[province] = case1;
 	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): -1 province count test: \tPASSED\n");
@@ -50,7 +50,7 @@ void testGameOver() {
 		printf("isGameOver(): -1 province count test: \tFAILED\n");
 		failed++;
 	}
-	temp->supplyCount[Province] = case2;
+	temp->supplyCount[province] = case2;
 	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): 0 province count test: \tPASSED\n");
@@ -78,8 +78,8 @@ void testGameOver() {
 		temp->supplyCount[x] = 1;
 	}
 
-	result = isGameOver(temp);
-	if (result == 0) {
+	results = isGameOver(temp);
+	if (results == 0) {
 		printf("isGameOver(): 0 empty piles : \tPASSED\n");
 		passed++;
 	}
@@ -90,8 +90,8 @@ void testGameOver() {
 	//introduce incremental  empty piles till it fails //
 	temp->supplyCount[j] = 0;
 	j++;
-	result = isGameOver(temp);
-	if (result == 0) {
+	results = isGameOver(temp);
+	if (results == 0) {
 		printf("isGameOver(): 1 empty piles : \tPASSED\n");
 		passed++;
 	}
@@ -104,8 +104,8 @@ void testGameOver() {
 	j++;
 	temp->supplyCount[j] = 0;
 	j++;
-	result = isGameOver(temp);
-	if (result) {
+	results = isGameOver(temp);
+	if (results) {
 		printf("isGameOver(): 3 empty piles : \tPASSED\n");
 		passed++;
 	}
@@ -117,8 +117,8 @@ void testGameOver() {
 	for (x = 0; x < 25; x++) {
 		temp->supplyCount[x] = 0;
 	}
-	result = isGameOver(temp);
-	if (result) {
+	results = isGameOver(temp);
+	if (results) {
 		printf("isGameOver(): 25 empty piles : \tPASSED\n");
 		passed++;
 	}
