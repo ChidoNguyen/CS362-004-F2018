@@ -160,8 +160,8 @@ void testScoreFor() {
 				break;
 		}
 		free(state);
-		printf("\n");
 	}
+	printf("\n");
 
 	// test discard //
 	for (x = 0; x < 6; x++) {
