@@ -40,6 +40,10 @@ void testGameOver() {
 	int x = 0;
 	int results, passed, failed;
 
+	for (x = 0; x < 25; x++) {
+		temp->supplyCount[x] = 1;
+	}
+
 	temp->supplyCount[province] = case1;
 	results = isGameOver(temp);
 	if (results != 1) {
@@ -74,9 +78,6 @@ void testGameOver() {
 
 	//fill all our supply counts to 1 //
 	int j = 0;
-	for ( x = 0; x < 25; x++) {
-		temp->supplyCount[x] = 1;
-	}
 
 	results = isGameOver(temp);
 	if (results == 0) {
@@ -127,7 +128,7 @@ void testGameOver() {
 		failed++;
 	}
 
-	printf("isGameOver() : PASSED COUNT %i \t FAILED COUNT %i", passed, failed);
+	printf("isGameOver() : PASSED COUNT %i \t FAILED COUNT %i\n", passed, failed);
 
 }
 
