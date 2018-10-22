@@ -2,8 +2,73 @@
 #include <stdlib.h>
 #include "dominion.h"
 
-//testing fullDeckCount() //
+//testing scoreFor() //
+int scoreFor(int player, struct gameState *state) {
 
+	int i;
+	int score = 0;
+	//score from hand
+	for (i = 0; i < state->handCount[player]; i++)
+	{
+		if (state->hand[player][i] == curse) { score = score - 1; };
+		if (state->hand[player][i] == estate) { score = score + 1; };
+		if (state->hand[player][i] == duchy) { score = score + 3; };
+		if (state->hand[player][i] == province) { score = score + 6; };
+		if (state->hand[player][i] == great_hall) { score = score + 1; };
+		if (state->hand[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+	}
+
+	//score from discard
+	for (i = 0; i < state->discardCount[player]; i++)
+	{
+		if (state->discard[player][i] == curse) { score = score - 1; };
+		if (state->discard[player][i] == estate) { score = score + 1; };
+		if (state->discard[player][i] == duchy) { score = score + 3; };
+		if (state->discard[player][i] == province) { score = score + 6; };
+		if (state->discard[player][i] == great_hall) { score = score + 1; };
+		if (state->discard[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+	}
+
+	//score from deck
+	for (i = 0; i < state->discardCount[player]; i++)
+	{
+		if (state->deck[player][i] == curse) { score = score - 1; };
+		if (state->deck[player][i] == estate) { score = score + 1; };
+		if (state->deck[player][i] == duchy) { score = score + 3; };
+		if (state->deck[player][i] == province) { score = score + 6; };
+		if (state->deck[player][i] == great_hall) { score = score + 1; };
+		if (state->deck[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
+	}
+
+	return score;
+}
+///////
+// Functions preopoulate some of our hands with test data//
+///////
+
+void populateHand(enum CARD pick, struct gameState *state, int player) {
+	state->handCount[player] = 10; // set to 10 card count
+	int i;
+	for (i = 0; i < state->handCount[player]; i++) {
+		state->hand[player][i] = pick;
+	}
+}
+
+void populateDiscard(enum CARD pick, struct gameState *state, int player) {
+	state->discardCount[player] = 10; // set to 10 card count
+	int i;
+	for (i = 0; i < state->discardCount[player]; i++) {
+		state->discard[player][i] = pick;
+	}
+}
+
+void populateDeck(enum CARD pick, struct gameState *state, int player) {
+	state->deckCount[player] = 10; // set to 10 card count
+	int i;
+	for (i = 0; i < state->deckCount[player]; i++) {
+		state->deck[player][i] = pick;
+	}
+}
 
 void testScoreFor() {
 	// Hand Test //
@@ -207,29 +272,7 @@ void testScoreFor() {
 	
 }
 
-void populateHand(enum CARD pick, struct gameState *state, int player) {
-	state->handCount[player] = 10; // set to 10 card count
-	int i;
-	for (i = 0; i < state->handCount[player]; i++) {
-		state->hand[player][i] = pick;
-	}
-}
 
-void populateDiscard(enum CARD pick, struct gameState *state, int player) {
-	state->discardCount[player] = 10; // set to 10 card count
-	int i;
-	for (i = 0; i < state->discardCount[player]; i++) {
-		state->discard[player][i] = pick;
-	}
-}
-
-void populateDeck(enum CARD pick, struct gameState *state, int player) {
-	state->deckCount[player] = 10; // set to 10 card count
-	int i;
-	for (i = 0; i < state->deckCount[player]; i++) {
-		state->deck[player][i] = pick;
-	}
-}
 
 int main(int argc, char* argv[]) {
 	testScoreFor();
