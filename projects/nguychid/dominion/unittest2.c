@@ -3,6 +3,26 @@
 #include "dominion.h"
 
 // Tetsing isGameOver() //
+struct gameState {
+	int numPlayers; //number of players
+	int supplyCount[treasure_map + 1];  //this is the amount of a specific type of card given a specific number.
+	int embargoTokens[treasure_map + 1];
+	int outpostPlayed;
+	int outpostTurn;
+	int whoseTurn;
+	int phase;
+	int numActions; /* Starts at 1 each turn */
+	int coins; /* Use as you see fit! */
+	int numBuys; /* Starts at 1 each turn */
+	int hand[MAX_PLAYERS][MAX_HAND];
+	int handCount[MAX_PLAYERS];
+	int deck[MAX_PLAYERS][MAX_DECK];
+	int deckCount[MAX_PLAYERS];
+	int discard[MAX_PLAYERS][MAX_DECK];
+	int discardCount[MAX_PLAYERS];
+	int playedCards[MAX_DECK];
+	int playedCardCount;
+};
 
 int isGameOver(struct gameState *state) {
 	int i;
@@ -33,10 +53,11 @@ int isGameOver(struct gameState *state) {
 
 void testGameOver() {
 
-	struct gameState temp = malloc(sizeof(gameState));
+	struct gameState *temp = malloc(sizeof(gameState));
 	int case1 = -1;
 	int case2 = 0;
 	int case3 = 1;
+	int x = 0;
 	int results, passed, failed;
 
 	temp->supplyCount[Province] = case1;
@@ -73,7 +94,7 @@ void testGameOver() {
 
 	//fill all our supply counts to 1 //
 	int j = 0;
-	for (int x = 0; x < 25; x++) {
+	for ( x = 0; x < 25; x++) {
 		temp.supplyCount[x] = 1;
 	}
 
@@ -113,7 +134,7 @@ void testGameOver() {
 		failed++;
 	}
 
-	for (int x = 0; x < 25; x++) {
+	for (x = 0; x < 25; x++) {
 		temp.supplyCount[x] = 0;
 	}
 	result = isGameOver(&temp);
