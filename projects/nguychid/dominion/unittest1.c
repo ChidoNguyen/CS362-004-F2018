@@ -19,12 +19,12 @@ int compare(const void* a, const void* b) {
 }
 
 void testCompare() {
-	int a, b, c, d, e, result;
+	int result;
 	int passed;
 	int failed;
 
-	a = INT_MIN;
-	b = INT_MAX;
+	const int a = INT_MIN;
+	const int b = INT_MAX;
 
 	result = compare(a, b);
 	if (result == -1) {
@@ -47,8 +47,7 @@ void testCompare() {
 		failed++;
 	}
 	
-	a = b;
-	result = compare(a, b);
+	result = compare(a, a);
 	if (result == 0) {
 		printf("COMPARE(): INT_MIN == INT_MAX : PASSED");
 		passed++;
@@ -62,5 +61,6 @@ void testCompare() {
 }
 
 int main(int argc, char *argv[]) {
-
+	testCompare();
+	return 0;
 }
