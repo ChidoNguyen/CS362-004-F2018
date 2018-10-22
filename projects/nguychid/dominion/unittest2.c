@@ -3,26 +3,6 @@
 #include "dominion.h"
 
 // Tetsing isGameOver() //
-struct gameState {
-	int numPlayers; //number of players
-	int supplyCount[treasure_map + 1];  //this is the amount of a specific type of card given a specific number.
-	int embargoTokens[treasure_map + 1];
-	int outpostPlayed;
-	int outpostTurn;
-	int whoseTurn;
-	int phase;
-	int numActions; /* Starts at 1 each turn */
-	int coins; /* Use as you see fit! */
-	int numBuys; /* Starts at 1 each turn */
-	int hand[MAX_PLAYERS][MAX_HAND];
-	int handCount[MAX_PLAYERS];
-	int deck[MAX_PLAYERS][MAX_DECK];
-	int deckCount[MAX_PLAYERS];
-	int discard[MAX_PLAYERS][MAX_DECK];
-	int discardCount[MAX_PLAYERS];
-	int playedCards[MAX_DECK];
-	int playedCardCount;
-};
 
 int isGameOver(struct gameState *state) {
 	int i;
@@ -61,7 +41,7 @@ void testGameOver() {
 	int results, passed, failed;
 
 	temp->supplyCount[Province] = case1;
-	results = isGameOver(&temp);
+	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): -1 province count test: \tPASSED\n");
 		passed++;
@@ -71,7 +51,7 @@ void testGameOver() {
 		failed++;
 	}
 	temp->supplyCount[Province] = case2;
-	results = isGameOver(&temp);
+	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): 0 province count test: \tPASSED\n");
 		passed++;
@@ -82,7 +62,7 @@ void testGameOver() {
 	}
 
 	temp->supplyCount[Province] = case1;
-	results = isGameOver(&temp);
+	results = isGameOver(temp);
 	if (results != 1) {
 		printf("isGameOver(): 1 province count test: \tPASSED\n");
 		passed++;
@@ -95,10 +75,10 @@ void testGameOver() {
 	//fill all our supply counts to 1 //
 	int j = 0;
 	for ( x = 0; x < 25; x++) {
-		temp.supplyCount[x] = 1;
+		temp->supplyCount[x] = 1;
 	}
 
-	result = isGameOver(&temp);
+	result = isGameOver(temp);
 	if (result == 0) {
 		printf("isGameOver(): 0 empty piles : \tPASSED\n");
 		passed++;
@@ -108,9 +88,9 @@ void testGameOver() {
 		failed++;
 	}
 	//introduce incremental  empty piles till it fails //
-	temp.supplyCount[j] = 0;
+	temp->supplyCount[j] = 0;
 	j++;
-	result = isGameOver(&temp);
+	result = isGameOver(temp);
 	if (result == 0) {
 		printf("isGameOver(): 1 empty piles : \tPASSED\n");
 		passed++;
@@ -120,11 +100,11 @@ void testGameOver() {
 		failed++;
 	}
 
-	temp.supplyCount[j] = 0;
+	temp->supplyCount[j] = 0;
 	j++;
-	temp.supplyCount[j] = 0;
+	temp->supplyCount[j] = 0;
 	j++;
-	result = isGameOver(&temp);
+	result = isGameOver(temp);
 	if (result) {
 		printf("isGameOver(): 3 empty piles : \tPASSED\n");
 		passed++;
@@ -135,9 +115,9 @@ void testGameOver() {
 	}
 
 	for (x = 0; x < 25; x++) {
-		temp.supplyCount[x] = 0;
+		temp->supplyCount[x] = 0;
 	}
-	result = isGameOver(&temp);
+	result = isGameOver(temp);
 	if (result) {
 		printf("isGameOver(): 25 empty piles : \tPASSED\n");
 		passed++;
