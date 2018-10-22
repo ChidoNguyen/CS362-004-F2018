@@ -42,6 +42,29 @@ int scoreFor(int player, struct gameState *state) {
 
 	return score;
 }
+// Needs fullDeckCount to test scoreFor//
+int fullDeckCount(int player, int card, struct gameState *state) {
+	int i;
+	int count = 0;
+
+	for (i = 0; i < state->deckCount[player]; i++)
+	{
+		if (state->deck[player][i] == card) count++;
+	}
+
+	for (i = 0; i < state->handCount[player]; i++)
+	{
+		if (state->hand[player][i] == card) count++;
+	}
+
+	for (i = 0; i < state->discardCount[player]; i++)
+	{
+		if (state->discard[player][i] == card) count++;
+	}
+
+	return count;
+}
+////////
 ///////
 // Functions preopoulate some of our hands with test data//
 ///////
@@ -136,7 +159,7 @@ void testScoreFor() {
 					printf("scoreFor() -> handCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 				break;
 		}
-		delete(state);
+		free(state);
 	}
 
 	// test discard //
@@ -201,7 +224,7 @@ void testScoreFor() {
 				printf("scoreFor() -> discardCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 			break;
 		}
-		delete( state);
+		free( state);
 	}
 
 	//test deck//
@@ -267,7 +290,7 @@ void testScoreFor() {
 				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
 			break;
 		}
-		delete(state);
+		free(state);
 	}
 	
 }
