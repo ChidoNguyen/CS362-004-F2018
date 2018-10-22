@@ -38,7 +38,6 @@ int scoreFor(int player, struct gameState *state) {
 		if (state->deck[player][i] == province) { score = score + 6; };
 		if (state->deck[player][i] == great_hall) { score = score + 1; };
 		if (state->deck[player][i] == gardens) { score = score + (fullDeckCount(player, 0, state) / 10); };
-		printf("SCORE: %i\n", score);
 	}
 
 	return score;
