@@ -33,7 +33,7 @@ int isGameOver(struct gameState *state) {
 
 void testGameOver() {
 
-	gameState temp = new gameState();
+	struct gameState temp = new struct gameState();
 	int case1 = -1;
 	int case2 = 0;
 	int case3 = 1;
