@@ -26,7 +26,7 @@ void testCompare() {
 	const int a = INT_MIN;
 	const int b = INT_MAX;
 
-	result = compare(a, b);
+	result = compare(&a, &b);
 	if (result == -1) {
 		printf("COMPARE(): INT_MIN < INT_MAX : PASSED");
 		passed++;
@@ -36,7 +36,7 @@ void testCompare() {
 		failed++;
 	}
 
-	result = compare(b, a);
+	result = compare(&b, &a);
 
 	if (result == 1) {
 		printf("COMPARE(): INT_MIN > INT_MAX : PASSED");
@@ -47,7 +47,7 @@ void testCompare() {
 		failed++;
 	}
 	
-	result = compare(a, a);
+	result = compare(&a, &a);
 	if (result == 0) {
 		printf("COMPARE(): INT_MIN == INT_MAX : PASSED");
 		passed++;
