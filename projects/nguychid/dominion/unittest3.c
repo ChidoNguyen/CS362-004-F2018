@@ -12,7 +12,7 @@ void testScoreFor() {
 	//tests handCount //
 	for (x = 0; x < 6; x++) {
 		int player = 0;
-		struct gameState * state = malloc(typeof(struct gameState));
+		struct gameState * state = malloc(sizeof(struct gameState));
 
 		switch (x)
 		{
@@ -77,7 +77,7 @@ void testScoreFor() {
 	// test discard //
 	for (x = 0; x < 6; x++) {
 		int player = 0;
-		struct gameState * state = malloc(typeof(struct gameState));
+		struct gameState * state = malloc(sizeof(struct gameState));
 
 		switch (x)
 		{
@@ -143,7 +143,7 @@ void testScoreFor() {
 
 	for (x = 0; x < 6; x++) {
 		int player = 0;
-		struct gameState * state = malloc(typeof(struct gameState));
+		struct gameState * state = malloc(sizeof(struct gameState));
 
 		switch (x)
 		{
