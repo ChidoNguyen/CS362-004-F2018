@@ -243,52 +243,52 @@ void testScoreFor() {
 				printf("scoreFor() -> deckCount -> curse: Expected Score of -10 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> curse: Expected Score of -10 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> curse: Expected Score of -10 \t\t Score: %i\t FAILED\n", score);
 			break;
 		case 1:
 			populateDeck(estate, state, player);
 			score = scoreFor(0, state);
 			if (score == 10) {
-				printf("scoreFor() -> deckCount -> estate: Expected Score of 10 \t Score: %i\t PASSED\n", score);
+				printf("scoreFor() -> deckCount -> estate: Expected Score of 10 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> estate: Expected Score of 10 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> estate: Expected Score of 10 \t\t Score: %i\t FAILED\n", score);
 			break;
 		case 2:
 			populateDeck(duchy, state, player);
 			score = scoreFor(0, state);
 			if (score == 30) {
-				printf("scoreFor() -> deckCount -> duchy: Expected Score of 30 \t Score: %i\t PASSED\n", score);
+				printf("scoreFor() -> deckCount -> duchy: Expected Score of 30 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> duchy: Expected Score of 30 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> duchy: Expected Score of 30 \t\t Score: %i\t FAILED\n", score);
 			break;
 		case 3:
 			populateDeck(province, state, player);
 			score = scoreFor(0, state);
 			if (score == 60) {
-				printf("scoreFor() -> deckCount -> province: Expected Score of 60 \t Score: %i\t PASSED\n", score);
+				printf("scoreFor() -> deckCount -> province: Expected Score of 60 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> province: Expected Score of 60 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> province: Expected Score of 60 \t\t Score: %i\t FAILED\n", score);
 			break;
 		case 4:
 			populateDeck(great_hall, state, player);
 			score = scoreFor(0, state);
 			if (score == 10) {
-				printf("scoreFor() -> deckCount -> great_hall: Expected Score of 10 \t Score: %i\t PASSED\n", score);
+				printf("scoreFor() -> deckCount -> great_hall: Expected Score of 10 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> great_hall: Expected Score of 10 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> great_hall: Expected Score of 10 \t\t Score: %i\t FAILED\n", score);
 			break;
 		case 5:
 			populateDeck(gardens, state, player);
 			score = scoreFor(0, state);
 			if (score == 1) {
-				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t Score: %i\t PASSED\n", score);
+				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t\t Score: %i\t PASSED\n", score);
 			}
 			else
-				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t Score: %i\t FAILED\n", score);
+				printf("scoreFor() -> deckCount -> gardens: Expected Score of 1 \t\t Score: %i\t FAILED\n", score);
 			break;
 		}
 		free(state);
