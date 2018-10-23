@@ -59,18 +59,22 @@ void testAdvent() {
 	else
 		printf("FAIL\n");
 
-	printf("PLAYER 2 STATE CHECK FOR UNCHANGED HAND/DECK/DISCARD:\t");
+	printf("PLAYER 2 STATE CHECK FOR UNCHANGED HAND/DECK/DISCARD:\n");
 	int Fail = 0;
-	if (state->hand[1] != originalState->hand[1])
+	if (state->hand[1] != originalState->hand[1]) {
+		printf("Failed Hand Check\n");
 		Fail++;
-	if (state->deck[1] != originalState->deck[1])
+	}
+	if (state->deck[1] != originalState->deck[1]) {
+		printf("Failed Deck Check\n");
 		Fail++;
-	if (state->discard[1] != originalState->discard[1])
+	}
+	if (state->discard[1] != originalState->discard[1]) {
+		printf("Failed Discard Check\n");
 		Fail++;
+	}
 	if (!Fail)
 		printf("PASS\n");
-	else
-		printf("FAILED\n");
 }
 
 int main(int argc, char*argv[]) {
