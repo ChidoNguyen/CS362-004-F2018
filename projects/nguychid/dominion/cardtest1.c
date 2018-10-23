@@ -17,12 +17,13 @@ void testSmith() {
 
 	struct gameState *state = malloc(sizeof(struct gameState));
 	struct gameState *originalState;
-	memcpy(originalState, state, sizeof(struct gameState));
 
 	//intialize a game//
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
 		printf("Initializing game failed.\n");
 	}
+	//copy state//
+	memcpy(originalState, state, sizeof(struct gameState));
 	printf("TESTING SMITHY +3 CARDS(NET GAIN OF 2 EXPECTED):\n");
 	int pre_draw = state->handCount[0];
 	printf("CURRENT HAND COUNT:\t\t %i\n", pre_draw);
