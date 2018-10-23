@@ -50,7 +50,7 @@ void testSmith() {
 	int Fail = 0;
 	for (int i = adventurer; i <= treasure_map; i++) {
 		if (state->supplyCount[i] != originalState->supplyCount[i])
-			fail++;
+			Fail++;
 	}
 	if (!Fail)
 		printf("PASS\n");
