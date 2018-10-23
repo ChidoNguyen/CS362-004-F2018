@@ -8,7 +8,6 @@ void rigPlayers(int player, enum CARD pick, struct gameState* state);
 //test getWinners()//
 
 void testGetWinners() {
-	int results;
 	int play[MAX_PLAYERS];
 	struct gameState *state = malloc(sizeof(struct gameState));
 
@@ -19,7 +18,7 @@ void testGetWinners() {
 	state->numPlayers = 2;
 	rigPlayers(0, curse, state);
 	rigPlayers(1, estate, state);
-	results = getWinners(play, state);
+	getWinners(play, state);
 	if (play[1] == 1 && play[0] == 0) {
 		printf("getWinners(): 2 players, player-2 should win: \t\t WINNER: Player 2: PASS\n");
 	}
@@ -30,7 +29,7 @@ void testGetWinners() {
 	state->numPlayers = 2;
 	rigPlayers(0, estate, state);
 	rigPlayers(1, curse, state);
-	results = getWinners(play, state);
+	getWinners(play, state);
 	if (play[0] == 1 && play[1] == 0 ) {
 		printf("getWinners(): 2 players, player-1 should win: \t\t WINNER: Player 1: PASS\n");
 	}
@@ -43,7 +42,7 @@ void testGetWinners() {
 
 	rigPlayers(0, estate, state);
 	rigPlayers(1, estate, state);
-	results = getWinners(play, state);
+	getWinners(play, state);
 	if (play[0] == 1 && play[1] == 1) {
 		printf("getWinners(): 2 players, TIE game: \t\t WINNER: Player 1 and 2: PASS\n");
 	}
