@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "dominion.h"
 #include <math.h>
 #include "rngs.h"
