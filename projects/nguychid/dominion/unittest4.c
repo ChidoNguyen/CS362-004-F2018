@@ -27,7 +27,7 @@ void testGetWinners() {
 
 	rigPlayers(0, estate, state);
 	rigPlayers(1, curse, state);
-	results = getWinners(play, state);
+	results = getWinners(&play, state);
 	if (play[0] == 1 && play[1] == 0 ) {
 		printf("getWinners(): 2 players, player-1 should win: \t\t WINNER: Player 1: PASS\n");
 	}
@@ -36,7 +36,7 @@ void testGetWinners() {
 
 	rigPlayers(0, estate, state);
 	rigPlayers(1, estate, state);
-	results = getWinners(play, state);
+	results = getWinners(&play, state);
 	if (play[0] == 1 && play[1] == 1) {
 		printf("getWinners(): 2 players, TIE game: \t\t WINNER: Player 1 and 2: PASS\n");
 	}
