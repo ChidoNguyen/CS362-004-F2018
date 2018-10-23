@@ -35,19 +35,19 @@ void testVillage() {
 	int postDisc = state->discardCount[0];
 	int postAct = state->numActions;
 	//testing hand count before and after should be +1//
-	printf("DRAWING A CARD: HAND BEFORE: %i \t HAND AFTER: %i\t\t;",preDraw, postDraw);
+	printf("DRAWING A CARD: HAND BEFORE: %i \t HAND AFTER: %i\t\t",preDraw, postDraw);
 	if (preDraw + 1 == postDraw)
 		printf("PASS\n");
 	else
 		printf("FAIL\n");
 	//actions
-	printf("ACTION +2 BEFORE: %i \t HAND AFTER: %i\t\t;", preAct, postAct);
+	printf("ACTION +2 BEFORE: %i \t HAND AFTER: %i\t\t\t", preAct, postAct);
 	if (preAct + 2 == postAct)
 		printf("PASS\n");
 	else
 		printf("FAIL\n");
 	// discard
-	printf("DISCARD +1 BEFORE: %i \t HAND AFTER: %i\t\t;", preDisc, postDisc);
+	printf("DISCARD +1 BEFORE: %i \t HAND AFTER: %i\t\t\t", preDisc, postDisc);
 	if (preDisc + 1 == postDisc)
 		printf("PASS\n");
 	else
