@@ -8,7 +8,6 @@
 
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
 void testGreatHall() {
-	int x = 0, y = 0;
 	int numPlayers = 2;
 
 	int choice1 = 0, choice2 = 0, choice3 = 0, handPos = 0, bonus = 0;

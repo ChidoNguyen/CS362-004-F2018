@@ -56,7 +56,7 @@ void testGetWinners() {
 
 void rigPlayers(int playerNumber, enum CARD pick, struct gameState* state) {
 	int x = 0;
-	for (x; x < 10;x++) {
+	for(x= 0; x < 10;x++) {
 		state->hand[playerNumber][x] = pick;
 	}
 }

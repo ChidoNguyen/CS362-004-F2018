@@ -11,9 +11,8 @@ void testGameOver() {
 	struct gameState *temp = malloc(sizeof(struct gameState));
 	int case1 = -1;
 	int case2 = 0;
-	int case3 = 1;
 	int x = 0;
-	int results, passed, failed;
+	int results = 0, passed = 0, failed = 0;
 
 	for (x = 0; x < 25; x++) {
 		temp->supplyCount[x] = 1;
