@@ -37,28 +37,28 @@ all: playdom player
 
 #Ass3 Testing#
 unittest1: unittest1.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g unittest1.c dominion.o rngs.o -o unittest1
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g unittest1.c dominion.o rngs.o -o unittest1
 
 unittest2: unittest2.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g unittest2.c dominion.o rngs.o -o unittest2
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g unittest2.c dominion.o rngs.o -o unittest2
 
 unittest3: unittest3.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g unittest3.c dominion.o rngs.o -o unittest3
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g unittest3.c dominion.o rngs.o -o unittest3
 
 unittest4: unittest4.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g unittest4.c dominion.o rngs.o -o unittest4
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g unittest4.c dominion.o rngs.o -o unittest4
 
 cardtest1: cardtest1.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g cardtest1.c dominion.o rngs.o -o cardtest1
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g cardtest1.c dominion.o rngs.o -o cardtest1
 
 cardtest2: cardtest2.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g cardtest2.c dominion.o rngs.o -o cardtest2
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g cardtest2.c dominion.o rngs.o -o cardtest2
 
 cardtest3: cardtest3.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g cardtest3.c dominion.o rngs.o -o cardtest3
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g cardtest3.c dominion.o rngs.o -o cardtest3
 
 cardtest4: cardtest4.c dominion.o rngs.o
-	gcc -fprofile-arcs -ftest-coverage -Wall -g cardtest4.c dominion.o rngs.o -o cardtest4
+	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g cardtest4.c dominion.o rngs.o -o cardtest4
 
 unittestresults: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4
 	./unittest1 > unittestresults.out

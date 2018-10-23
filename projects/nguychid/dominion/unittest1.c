@@ -12,9 +12,9 @@
 
 int compare(const void* a, const void* b);
 void testCompare() {
-	int result;
-	int passed;
-	int failed;
+	int result=0;
+	int passed=0;
+	int failed=0;
 
 	const int a = INT_MIN;
 	const int b = INT_MAX;
