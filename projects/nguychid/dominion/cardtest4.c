@@ -23,7 +23,7 @@ void testGreatHall() {
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
 		printf("Initializing game failed.\n");
 	}
-	int currentPlayer = whoseTurn(state)
+	int currentPlayer = whoseTurn(state);
 		//copy state//
 		memcpy(originalState, state, sizeof(struct gameState));
 	printf("TESTING GREAT HALL CARD (+1 Action , +1 Card):\n");
