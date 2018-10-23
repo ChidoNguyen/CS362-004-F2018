@@ -32,6 +32,10 @@ void testGetWinners() {
 	if (play[0] == 1 && play[1] == 0 ) {
 		printf("getWinners(): 2 players, player-1 should win: \t\t WINNER: Player 1: PASS\n");
 	}
+	else if (play[0] ==  play[1]) {
+		printf("getWinners(): 2 players, player-1 should win: \t\t WINNER: TIE: FAIL\n");
+
+	}
 	else
 		printf("getWinners(): 2 players, player-1 should win: \t\t WINNER: Player 2: FAIL\n");
 
