@@ -45,11 +45,32 @@ void testAdvent() {
 			handTreasure++;
 		y++;
 	}
+	printf("Testing to see if our hand increases by 2 treasures:\n");
 	printf("Orignal State: %i\tPost Play State: %i\n", handTreasure, postHandTreasure);
 	if ( postHandTreasure - 1 == handTreasure)
 		printf("PASS\n");
 	else
 		printf("FAIL\n");
+	//testing to see if our discard pile changed//
+	printf("Discard state changed after searching for treasure card:\n");
+	if (state->discardCount[0] != originalState->discardCount[0]) {
+		printf("PASS\n");
+	}
+	else
+		printf("FAIL\n");
+
+	printf("PLAYER 2 STATE CHECK FOR UNCHANGED HAND/DECK/DISCARD:\t");
+	Fail = 0;
+	if (state->hand[1] != originalState->hand[1])
+		Fail++;
+	if (state->deck[1] != originalState->deck[1])
+		Fail++;
+	if (state->discard[1] != originalState->discard[1])
+		Fail++;
+	if (!Fail)
+		printf("PASS\n");
+	else
+		printf("FAILED\n");
 }
 
 int main(int argc, char*argv[]) {
