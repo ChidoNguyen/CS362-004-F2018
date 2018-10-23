@@ -16,6 +16,7 @@ void testGetWinners() {
 	// 1 < 2
 	// 1 > 2
 	// 1 == 2 
+	state->numPlayers = 2;
 	rigPlayers(0, curse, state);
 	rigPlayers(1, estate, state);
 	results = getWinners(play, state);
