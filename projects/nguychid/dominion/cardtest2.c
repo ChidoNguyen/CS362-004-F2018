@@ -26,10 +26,16 @@ void testAdvent() {
 	}
 	//copy state//
 	memcpy(originalState, state, sizeof(struct gameState));
-	printf("TESTING ADVENTURER CARD\n:");
+	printf("TESTING ADVENTURER CARD:\n");
 	int results = cardEffect(adventurer, choice1, choice2, choice3, state, handPos, &bonus);
 	printf("Discarding Adventurer and Drawing Until 2 Treasure Cards: Net Gain Expected of +1 Cards\n");
-	if (state->handCount[0] - 1 == originalState->handCount[0])
+	int handTreasure = originalState->handCount[0];
+	int	postHandTreasure = state->handCount[0];
+	for (int x = 0; x < state->hand[0].length() < x++) {
+		printf("testing");
+	}
+
+	if ( postHandTreasure - 1 == handTreasure)
 		printf("PASS\n");
 	else
 		printf("FAIL\n");
