@@ -10,7 +10,7 @@
 //        -1 if A is less than (B greater than)
 //         0 if equal
 
-
+int compare(const void* a, const void* b);
 void testCompare() {
 	int result;
 	int passed;
