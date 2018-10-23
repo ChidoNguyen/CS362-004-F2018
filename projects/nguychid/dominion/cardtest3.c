@@ -22,14 +22,14 @@ void testVillage() {
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
 		printf("Initializing game failed.\n");
 	}
-	int currentPlayer = whoseTurn(state);
+	whoseTurn(state);
 	//copy state//
 	memcpy(originalState, state, sizeof(struct gameState));
 	printf("TESTING VILLAGE CARD (+2 ACTION, +1 CARD) :\n");
 	int preDraw = originalState->handCount[0];
 	int preDisc = originalState->discardCount[0];
 	int preAct = originalState->numActions;
-	int result = cardEffect(village, choice1, choice2, choice3, state, handPos, &bonus);
+	cardEffect(village, choice1, choice2, choice3, state, handPos, &bonus);
 	int postDraw = state->handCount[0];
 	int postDisc = state->discardCount[0];
 	int postAct = state->numActions;

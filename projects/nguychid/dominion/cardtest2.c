@@ -28,7 +28,7 @@ void testAdvent() {
 	//copy state//
 	memcpy(originalState, state, sizeof(struct gameState));
 	printf("TESTING ADVENTURER CARD:\n");
-	int results = cardEffect(adventurer, choice1, choice2, choice3, state, handPos, &bonus);
+	cardEffect(adventurer, choice1, choice2, choice3, state, handPos, &bonus);
 	printf("Discarding Adventurer and Drawing Until 2 Treasure Cards: Net Gain Expected of +1 Cards\n");
 	int handTreasure = 0 ;
 	int	postHandTreasure = 0;
