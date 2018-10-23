@@ -36,5 +36,6 @@ void testAdvent() {
 }
 
 int main(int argc, char*argv[]) {
-
+	testAdvent();
+	return 0;
 }
