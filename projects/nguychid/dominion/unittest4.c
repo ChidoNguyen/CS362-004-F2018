@@ -25,7 +25,9 @@ void testGetWinners() {
 	}
 	else
 		printf("getWinners(): 2 players, player-2 should win: \t\t WINNER: Player 1: FAIL\n");
-
+	free(state);
+	struct gameState *state = malloc(sizeof(struct gameState));
+	state->numPlayers = 2;
 	rigPlayers(0, estate, state);
 	rigPlayers(1, curse, state);
 	results = getWinners(play, state);
