@@ -69,8 +69,8 @@ void testSmith() {
 		printf("FAILED\n");
 	// other player state should be unchanged
 	printf("PLAYER 2 STATE:\t");
-	int Fail = 0;
-	state->hand[1] != originalState->hand[1] ? Fail++;
+	Fail = 0;
+	state->hand[1] != originalState->hand[1] ? Fail++ : ;
 	if (!Fail)
 		printf("PASS\n");
 	else
