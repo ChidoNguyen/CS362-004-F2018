@@ -70,7 +70,7 @@ void testSmith() {
 	// other player state should be unchanged
 	printf("PLAYER 2 STATE:\t");
 	Fail = 0;
-	state->hand[1] != originalState->hand[1] ? Fail++ : ;
+	state->hand[1] != originalState->hand[1] ? Fail++ : Fail=Fail;
 	if (!Fail)
 		printf("PASS\n");
 	else
