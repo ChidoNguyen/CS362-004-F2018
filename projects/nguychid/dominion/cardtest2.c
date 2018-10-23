@@ -32,7 +32,7 @@ void testAdvent() {
 	int handTreasure = originalState->handCount[0];
 	int	postHandTreasure = state->handCount[0];
 	for (int x = 0; x < (sizeof(state->hand[0])/sizeof(state->hand[0][0])); x++) {
-		printf("testing");
+		printf("%i\n", state->hand[0][x]);
 	}
 
 	if ( postHandTreasure - 1 == handTreasure)
