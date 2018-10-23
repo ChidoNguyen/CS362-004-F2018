@@ -16,13 +16,13 @@ void testSmith() {
 	struct gameState *state = malloc(sizeof(struct gameState));
 
 	//intialize a game//
-	if (initializeGame(numPlayers, k, randomSeed, &state)) {
+	if (initializeGame(numPlayers, k, randomSeed, state)) {
 		printf("Initializing game failed.\n");
 	}
 	printf("TESTING SMITHY +3 CARDS:\n");
 	int pre_draw = state->handCount[0];
-	printf("CURRENT HAND COUNT:\t %s", pre_draw);
-	int result = cardEffect(smithy, choice1, choice2, choice3, &state, handPos, &bonus);
+	printf("CURRENT HAND COUNT:\t %i", pre_draw);
+	int result = cardEffect(smithy, choice1, choice2, choice3, state, handPos, &bonus);
 	printf("AFTER DRAWING HAND COUNT: \t%i\t", state->handCount);
 	if (state->handCount[0] - 2 == pre_draw)
 		printf("PASS\n");
