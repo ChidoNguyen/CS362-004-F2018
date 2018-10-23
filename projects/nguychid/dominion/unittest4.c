@@ -4,7 +4,7 @@
 #include "rngs.h"
 #include "dominion_helpers.h"
 
-void rigPlayers(int player, enum CARD pick, struct gameState state);
+void rigPlayers(int player, enum CARD pick, struct gameState* state);
 //test getWinners()//
 
 void testGetWinners() {
