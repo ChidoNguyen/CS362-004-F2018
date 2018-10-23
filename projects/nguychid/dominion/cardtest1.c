@@ -20,11 +20,11 @@ void testSmith() {
 		printf("Initializing game failed.\n");
 	}
 	printf("TESTING SMITHY +3 CARDS:\n");
-	int pre_draw = state->handCount;
+	int pre_draw = state->handCount[0];
 	printf("CURRENT HAND COUNT:\t %s", pre_draw);
 	int result = cardEffect(smithy, choice1, choice2, choice3, state, handPos, &bonus);
 	printf("AFTER DRAWING HAND COUNT: \t%i\t", state->handCount);
-	if (state->handCount - 2 == pre_draw)
+	if (state->handCount[0] - 2 == pre_draw)
 		printf("PASS\n");
 	else
 		printf("FAILED\n");
