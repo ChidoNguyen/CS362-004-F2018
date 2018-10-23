@@ -58,7 +58,7 @@ void testSmith() {
 		printf("FAILED\n");
 	//no victory pile state change//
 	printf("VICTORY CARD STATE:\t");
-	int Fail = 0;
+	Fail = 0;
 	for (int i = estate; i <= province; i++) {
 		if (state->supplyCount[i] != originalState->supplyCount[i])
 			Fail++;
