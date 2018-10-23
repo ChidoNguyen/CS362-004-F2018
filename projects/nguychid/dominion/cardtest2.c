@@ -31,7 +31,7 @@ void testAdvent() {
 	printf("Discarding Adventurer and Drawing Until 2 Treasure Cards: Net Gain Expected of +1 Cards\n");
 	int handTreasure = originalState->handCount[0];
 	int	postHandTreasure = state->handCount[0];
-	for (int x = 0; x < state->hand[0].length() < x++) {
+	for (int x = 0; x < (state->hand[0]).length() < x++) {
 		printf("testing");
 	}
 
