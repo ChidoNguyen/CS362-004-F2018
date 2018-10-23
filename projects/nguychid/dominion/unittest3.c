@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dominion.h"
-
+#include "rngs.h"
+#include "dominion_helpers.h"
 
 void populateHand(enum CARD pick, struct gameState *state, int player) {
 	state->handCount[player] = 10; // set to 10 card count
