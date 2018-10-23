@@ -17,7 +17,7 @@ void testSmith() {
 
 	struct gameState *state = malloc(sizeof(struct gameState));
 	struct gameState *originalState;
-	memcpy(originalState, state, sizeof(struct gameState));
+	memcpy(&originalState, &state, sizeof(struct gameState));
 
 	//intialize a game//
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
