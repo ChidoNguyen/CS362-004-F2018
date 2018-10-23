@@ -13,7 +13,10 @@ void testSmith() {
 	int k[10] = { adventurer, embargo, village, outpost, mine, cutpurse,
 			sea_hag, great_hall, smithy, council_room };
 	int randomSeed = rand();
+
 	struct gameState *state = malloc(sizeof(struct gameState));
+	struct gameState *originalState;
+	memcpy(originalState, state, sizeof(struct gameState));
 
 	//intialize a game//
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
@@ -29,6 +32,16 @@ void testSmith() {
 		printf("PASS\n");
 	else
 		printf("FAILED\n");
+
+	printf("---------------------------------------------\n");
+	printf("Verifying Cards Drawn From Own Pile:\n");
+	if (state->deckCount[0] != originalState->deckCount[0]) {
+		printf("TEST PASS\n");
+	}
+	else
+		printf("FAILED\n");
+	printf("Verifying No State Changes Occured:\n");
+	
 
 }
 
