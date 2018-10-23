@@ -37,13 +37,13 @@ void testAdvent() {
 		int tmp = state->hand[0][x];
 		if (tmp >= 4 && tmp <= 6)
 			postHandTreasure++;
-		x++
+		x++;
 	}
 	while (originalState->hand[0][x] != 0) {
 		int tmp = state->hand[0][x];
 		if (tmp >= 4 && tmp <= 6)
 			handTreasure++;
-		y++
+		y++;
 	}
 	printf("Orignal State: \t%i\tPost Play State: \t%i\n", handTreasure, postHandTreasure);
 	if ( postHandTreasure - 1 == handTreasure)
