@@ -16,7 +16,7 @@ void testSmith() {
 	int randomSeed = rand();
 
 	struct gameState *state = malloc(sizeof(struct gameState));
-	struct gameState *originalState;
+	struct gameState *originalState = malloc(sizeof(struct gameState));
 
 	//intialize a game//
 	if (initializeGame(numPlayers, k, randomSeed, state)) {
