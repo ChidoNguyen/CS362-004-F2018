@@ -23,7 +23,7 @@ void testSmith() {
 	int pre_draw = state->handCount[0];
 	printf("CURRENT HAND COUNT:\t\t %i\n", pre_draw);
 	int result = cardEffect(smithy, choice1, choice2, choice3, state, handPos, &bonus);
-	printf("EXPECTED HAND COUNT AFTER DRAW:\t\t%i", pre_draw + 2);
+	printf("EXPECTED HAND COUNT AFTER DRAW:\t\t%i\n", pre_draw + 2);
 	printf("AFTER DRAWING HAND COUNT: \t\t%i\n", state->handCount[0]);
 	if (state->handCount[0] - 2 == pre_draw)
 		printf("PASS\n");
