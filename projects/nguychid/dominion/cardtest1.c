@@ -36,15 +36,15 @@ void testSmith() {
 		printf("FAILED\n");
 
 	printf("---------------------------------------------\n");
-
+	// own pile
 	printf("Verifying Cards Drawn From Own Pile:\n");
 	if (state->deckCount[0] != originalState->deckCount[0]) {
-		printf("TEST PASS\n");
+		printf("PASS\n");
 	}
 	else
 		printf("FAILED\n");
 
-
+	// no state change for kingdom cards
 	printf("Verifying No State Changes Occured:\n");
 	printf("KINGDOM CARD STATE:\t");
 	int Fail = 0;
@@ -56,7 +56,17 @@ void testSmith() {
 		printf("PASS\n");
 	else
 		printf("FAILED\n");
-	
+	//no victory pile state change//
+	printf("VICTORY CARD STATE:\t");
+	int Fail = 0;
+	for (int i = estate; i <= province; i++) {
+		if (state->supplyCount[i] != originalState->supplyCount[i])
+			Fail++;
+	}
+	if (!Fail)
+		printf("PASS\n");
+	else
+		printf("FAILED\n");
 
 }
 
