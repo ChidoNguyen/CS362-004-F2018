@@ -27,7 +27,7 @@ void testSmith() {
 	printf("TESTING SMITHY +3 CARDS(NET GAIN OF 2 EXPECTED):\n");
 	int pre_draw = state->handCount[0];
 	printf("CURRENT HAND COUNT:\t\t %i\n", pre_draw);
-	//int result = cardEffect(smithy, choice1, choice2, choice3, state, handPos, &bonus);
+	int result = cardEffect(smithy, choice1, choice2, choice3, state, handPos, &bonus);
 	printf("EXPECTED HAND COUNT AFTER DRAW:\t\t%i\n", pre_draw + 2);
 	printf("AFTER DRAWING HAND COUNT: \t\t%i\n", state->handCount[0]);
 	if (state->handCount[0] - 2 == pre_draw)
@@ -36,13 +36,26 @@ void testSmith() {
 		printf("FAILED\n");
 
 	printf("---------------------------------------------\n");
+
 	printf("Verifying Cards Drawn From Own Pile:\n");
 	if (state->deckCount[0] != originalState->deckCount[0]) {
 		printf("TEST PASS\n");
 	}
 	else
 		printf("FAILED\n");
+
+
 	printf("Verifying No State Changes Occured:\n");
+	printf("KINGDOM CARD STATE:\t");
+	int Fail = 0;
+	for (int i = adventurer; i <= treasure_map; i++) {
+		if (state->supplyCount[i] != originalState->supplyCount[i])
+			fail++;
+	}
+	if (!Fail)
+		printf("PASS\n");
+	else
+		printf("FAILED\n");
 	
 
 }
