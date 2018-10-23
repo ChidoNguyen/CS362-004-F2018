@@ -60,7 +60,7 @@ void testAdvent() {
 		printf("FAIL\n");
 
 	printf("PLAYER 2 STATE CHECK FOR UNCHANGED HAND/DECK/DISCARD:\t");
-	Fail = 0;
+	int Fail = 0;
 	if (state->hand[1] != originalState->hand[1])
 		Fail++;
 	if (state->deck[1] != originalState->deck[1])
