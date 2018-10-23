@@ -4,13 +4,13 @@
 #include "rngs.h"
 #include "dominion_helpers.h"
 
-void rigPlayers(int player, enum CARD pick, gameState state);
+void rigPlayers(int player, enum CARD pick, struct gameState state);
 //test getWinners()//
 
 void testGetWinners() {
 	int results;
 	int play[MAX_PLAYERS];
-	struct gameState state = malloc(sizeof(struct gameState));
+	struct gameState *state = malloc(sizeof(struct gameState));
 
 	//2 player testing//
 	// 1 < 2
