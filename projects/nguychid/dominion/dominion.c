@@ -462,7 +462,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 	int j;
 	int highScore;
 	int currentPlayer;
-
+	printf("1\n");
 	//get score for each player
 	for (i = 0; i < MAX_PLAYERS; i++)
 	{
@@ -476,7 +476,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 			players[i] = scoreFor(i, state);
 		}
 	}
-
+	printf("1\n");
 	//find highest score
 	j = 0;
 	for (i = 0; i < MAX_PLAYERS; i++)
@@ -487,7 +487,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 		}
 	}
 	highScore = players[j];
-
+	printf("1\n");
 	//add 1 to players who had less turns
 	currentPlayer = whoseTurn(state);
 	for (i = 0; i < MAX_PLAYERS; i++)
@@ -497,7 +497,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 			players[i]++;
 		}
 	}
-
+	printf("1\n");
 	//find new highest score
 	j = 0;
 	for (i = 0; i < MAX_PLAYERS; i++)
@@ -508,7 +508,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
 		}
 	}
 	highScore = players[j];
-
+	printf("1\n");
 	//set winners in array to 1 and rest to 0
 	for (i = 0; i < MAX_PLAYERS; i++)
 	{
