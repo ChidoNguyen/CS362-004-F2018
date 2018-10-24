@@ -77,7 +77,7 @@ unittestresults: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 car
 	echo >>unittestresults.out
 	./cardtest4 >> unittestresults.out
 	echo >>unittestresults.out
-	gcov dominion.c >> unittestresults.out
+	gcov -b -f dominion.c >> unittestresults.out
 	echo >>unittestresults.out
 	cat dominion.c.gcov >> unittestresults.out
 
