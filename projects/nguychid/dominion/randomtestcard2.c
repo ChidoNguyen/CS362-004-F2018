@@ -57,7 +57,7 @@ int main(int argc, char* argv[]) {
 	}
 	printf("Village Card Random Test: \n");
 	printf("Village Draw Card Test Results : %i / %i Passed\n", drawTest, TESTRUN);
-	printf("Village Action Increase Test Results : %i / %i Passed\n"actionTest, TESTRUN);
+	printf("Village Action Increase Test Results : %i / %i Passed\n",actionTest, TESTRUN);
 	printf("Village Discard Card Test Results : %i / %i Passed\n", discardTest, TESTRUN);
 	return 0;
 }
