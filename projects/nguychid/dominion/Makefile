@@ -90,7 +90,7 @@ randomtestadventurer.out: randomtestadventurer
 	echo >>randomtestadventurer.out
 	cat randomtestadventurer.c.gcov >> randomtestadventurer.out
 	
-randomtestcard1.out: randomtestcard1.c rngs.o dominion.o
+randomtestcard1: randomtestcard1.c rngs.o dominion.o
 	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g randomtestcard1.c dominion.o rngs.o -o randomtestcard1
 randomtestcard1.out: randomtestcard1
 	./randomtestcard1 > randomtestcard1.out
@@ -99,7 +99,7 @@ randomtestcard1.out: randomtestcard1
 	echo >>randomtestcard1.out
 	cat randomtestcard1.c.gcov >> randomtestcard1.out
 	
-randomtestcard2.out: randomtestcard2.c rngs.o dominion.o
+randomtestcard2: randomtestcard2.c rngs.o dominion.o
 	gcc -fprofile-arcs -ftest-coverage ${CFLAGS} -g randomtestcard2.c dominion.o rngs.o -o randomtestcard2
 randomtestcard2.out: randomtestcard2
 	./randomtestcard2 > randomtestcard2.out
