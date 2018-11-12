@@ -5,6 +5,7 @@
 #include "rngs.h"
 #include "dominion_helpers.h"
 #include <time.h>
+#include "dominion.h"
 
 #define TESTRUN  1000
 
