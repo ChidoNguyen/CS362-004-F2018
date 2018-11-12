@@ -75,7 +75,7 @@ int main(int argc, char* argv[]) {
 		else
 			discardFail++;
 	}
-	printf("Adventurer Card Random Test: Treasure Drawing Passed %i / %i Runs. Discard Aspect Passed %i / %i\n", treasurePass, TESTRUN, discardPass, TESTRUN);
+	printf("\nAdventurer Card Random Test: \nTreasure Drawing Passed %i / %i Runs.\n Discard Aspect Passed %i / %i\n", treasurePass, TESTRUN, discardPass, TESTRUN);
 
 	return 0;
 }
