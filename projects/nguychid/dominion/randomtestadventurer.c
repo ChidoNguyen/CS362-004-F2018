@@ -4,6 +4,7 @@
 #include <strings.h>
 #include "rngs.h"
 #include "dominion_helpers.h"
+#include <time.h>
 
 #define TESTRUN  1000
 srand(time(null));
@@ -32,8 +33,8 @@ int main(int argc, char* argv[]) {
 	for (int x = 0; x < TESTRUN; x++) {
 		int randomSeed = rand();
 		// initialize new game and copy original game state
-		initializeGame(numPlayers, k, randomSeed);
-		memcpy(originalGame, game, sizeof(struct gameState));
+		initializeGame(numberPlayers, k, randomSeed,game);
+		memcpy(&originalGame, game, sizeof(struct gameState));
 		
 		// Play the card 
 
