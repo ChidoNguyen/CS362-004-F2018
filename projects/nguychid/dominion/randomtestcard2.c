@@ -40,9 +40,9 @@ int main(int argc, char* argv[]) {
 
 		// Play the card 
 
-		int preDraw = orignalGame->handCount[0];
-		int preDisc = orignalGame->discardCount[0];
-		int preAct = orignalGame->numActions;
+		int preDraw = originalGame->handCount[0];
+		int preDisc = originalGame->discardCount[0];
+		int preAct = originalGame->numActions;
 		cardEffect(village, choice1, choice2, choice3, game, handPos, &bonus);
 		int postDraw = game->handCount[0];
 		int postDisc = game->discardCount[0];
