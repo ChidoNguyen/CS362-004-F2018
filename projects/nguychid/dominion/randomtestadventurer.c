@@ -9,7 +9,9 @@
 
 #define TESTRUN  1000
 
-
+struct gameState* newGame();
+int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,struct gameState *state);
+int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
 
 // Test Adventurer Card
 // Expect 2 card to be drawn , and discard pile to potentially change
