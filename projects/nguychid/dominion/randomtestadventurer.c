@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <strings.h>
+#include <string.h>
 #include "rngs.h"
 #include "dominion_helpers.h"
 #include <time.h>
