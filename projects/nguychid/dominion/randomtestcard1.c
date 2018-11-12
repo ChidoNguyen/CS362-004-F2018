@@ -19,7 +19,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 int main(int argc, char* argv[]) {
 	srand(time(0));
 	// pass fail count
-	cardCountPass = 0;
+	int cardCountPass = 0;
 	// new game 
 	struct gameState *game = newGame();
 	struct gameState *originalGame = newGame();
