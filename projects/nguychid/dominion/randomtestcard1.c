@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
 	srand(time(0));
 	// pass fail count
 	int cardCountPass = 0;
+	int discardPass = 0;
 	// new game 
 	struct gameState *game = newGame();
 	struct gameState *originalGame = newGame();
@@ -46,8 +47,13 @@ int main(int argc, char* argv[]) {
 		if (game->handCount[0] - 2 == originalGame->handCount[0]) {
 			cardCountPass++;
 		}
+		if (game->discardCount[0] + 1 == originalGame->discardCount[0]) {
+			discardPass ++;
+		}
 	}
 
-	printf("Smithy Random Test: %i/ %i Runs Passed.\n", cardCountPass, TESTRUN);
+	printf("Smithy Random Test Drawing Card: %i/ %i Runs Passed.\n", cardCountPass, TESTRUN);
+	printf("Smithy Random Test Discarding Card: %i/ %i Runs Passed.\n", discardPass, TESTRUN);
+	return 0;
 }
 
