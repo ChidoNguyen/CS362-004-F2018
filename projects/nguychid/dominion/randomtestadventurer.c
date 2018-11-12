@@ -7,21 +7,22 @@
 #include <time.h>
 
 #define TESTRUN  1000
-srand(time(null));
+
 
 
 // Test Adventurer Card
 // Expect 2 card to be drawn , and discard pile to potentially change
 
 int main(int argc, char* argv[]) {
+	srand(time(0));
 	// pass fail count
 	int treasurePass = 0;
 	int treasureFail = 0;
 	int discardPass = 0;
 	int discardFail = 0;
 	// new game 
-	struct gameState game = newGame();
-	struct gameState originalGame = newGame();
+	struct gameState *game = newGame();
+	struct gameState *originalGame = newGame();
 	int numberPlayers = 2;
 	// No use for Adventurer
 	int choice1 = 0;
@@ -34,8 +35,8 @@ int main(int argc, char* argv[]) {
 	for (int x = 0; x < TESTRUN; x++) {
 		int randomSeed = rand();
 		// initialize new game and copy original game state
-		initializeGame(numberPlayers, k, randomSeed, &game);
-		memcpy(&originalGame, &game, sizeof(struct gameState));
+		initializeGame(numberPlayers, k, randomSeed, game);
+		memcpy(originalGame, game, sizeof(struct gameState));
 		
 		// Play the card 
 
