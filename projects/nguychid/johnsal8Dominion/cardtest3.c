@@ -35,7 +35,7 @@ void testVillage() {
 	int postAct = state->numActions;
 	//testing hand count before and after should be +1//
 	printf("DRAWING A CARD: HAND BEFORE: %i \t HAND AFTER: %i\t\t",preDraw, postDraw);
-	if (preDraw + 1 == postDraw)
+	if (preDraw == postDraw)
 		printf("PASS\n");
 	else
 		printf("FAIL\n");
