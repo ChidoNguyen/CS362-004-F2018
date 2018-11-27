@@ -1305,7 +1305,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 void runSmithy(int currentPlayer, int handPos, struct gameState* state) 
 {
     //+3 Cards
-    for (int i = 0; i < 4; i++) // bug (should be `i < 3`)
+    for (int i = 0; i < 3; i++) // bug (should be `i < 3`)
     {
       drawCard(currentPlayer, state);
     }
