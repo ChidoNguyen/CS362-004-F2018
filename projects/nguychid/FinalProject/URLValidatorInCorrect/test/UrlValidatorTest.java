@@ -77,7 +77,7 @@ public class UrlValidatorTest extends TestCase {
 	   assertTrue(urlVal.isValid("http://"+testUrlAuthority[5].item));
 	   assertTrue(urlVal.isValid("http://"+testUrlAuthority[6].item));
 	   //this is right//
-	  //assertFalse(urlVal.isValid("http://"+testUrlAuthority[3].item));
+	 assertFalse(urlVal.isValid("http://"+testUrlAuthority[3].item));
 	 //assertFalse(urlVal.isValid("http://"+testUrlAuthority[4].item));
 	 //  assertFalse(urlVal.isValid("http://"+testUrlAuthority[5]));
 	  // assertFalse(urlVal.isValid("http://"+testUrlAuthority[6]));
